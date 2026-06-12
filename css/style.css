@@ -9,8 +9,13 @@
 body{
     margin:0;
     background-color: beige;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-
+main {
+    flex:1;
+}
 .topo{
     text-align: center;
     background-color:var(--azul-escuro);   
@@ -38,3 +43,9 @@ body{
     }
 }
 
+.rodape {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 1px;
+}
