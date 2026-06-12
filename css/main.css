@@ -29,3 +29,13 @@ body {
         color: rgb(207, 205, 205);
     }
 }
+
+.card {
+    padding: 10px;
+    margin: 300px 20px 30px;
+    width: 30%;
+    min-width: 100px;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+}
