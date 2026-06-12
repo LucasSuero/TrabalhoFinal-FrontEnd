@@ -1,0 +1,31 @@
+body {
+    background-image: url(../img/Universidade.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+.tituloPrincipal {
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    h1 {
+        display: inline;
+        font-size: 80px;
+        transition: all 0.2s ease;
+    }
+    h1:hover {
+        color: rgb(207, 205, 205);
+    }
+    h3 {
+        font-size: 25px;
+        transition: all 0.2s ease;
+        display: inline;
+        justify-content: center;
+    }
+    h3:hover {
+        color: rgb(207, 205, 205);
+    }
+}
