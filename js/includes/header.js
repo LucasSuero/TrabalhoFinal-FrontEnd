@@ -6,7 +6,7 @@ document.getElementById("header").innerHTML = `
 
     <div class="selecao">
         <a href="/index.html">Início</a>
-        <a href="/pages/cadastro.html">Cadastro Alunos</a>
+        <a href="/pages/alunos.html">Alunos</a>
         <a href="/pages/notas.html">Notas</a>
         <a href="/pages/relatorios.html">Relatórios</a>
         <a href="/pages/sobre.html">Sobre</a>

@@ -3,4 +3,4 @@ document.getElementById("footer").innerHTML = `
         <h4>© 2026 UniFuture</h4>
     </div>
 `;
-console.log("Header Carregado!");
+console.log("Footer Carregado!");
