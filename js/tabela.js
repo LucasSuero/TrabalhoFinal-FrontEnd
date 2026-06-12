@@ -37,3 +37,15 @@ async function CompletarTabela() {
 }
 
 CompletarTabela();
+
+const modal = document.getElementById("modal");
+const abrir = document.getElementById("abrirModal");
+const fechar = document.getElementById("fecharModal");
+
+abrir.addEventListener("click", () => {
+    modal.classList.add("ativo");
+});
+
+fechar.addEventListener("click", () => {
+    modal.classList.remove("ativo");
+});

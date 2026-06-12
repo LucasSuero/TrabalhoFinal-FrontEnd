@@ -6,6 +6,23 @@
         "nota1": 8.0,
         "nota2": 8.5,
         "situacao": "Aprovado"
+    },
+    {
+        "nome": "Leonardo Kenji Tanida Soares",
+        "curso": "Engenharia de software",
+        "semestre": "3",
+        "nota1": 8.0,
+        "nota2": 8.5,
+        "situacao": "Aprovado"
+    },
+
+    {
+        "nome": "Leonardo Kenji Tanida Soares",
+        "curso": "Engenharia de software",
+        "semestre": "3",
+        "nota1": 8.0,
+        "nota2": 8.5,
+        "situacao": "Aprovado"
     }
 
 ]

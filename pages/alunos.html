@@ -4,26 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/alunos.css">
     <title>Alunos</title>
 </head>
 <body>
      <div id="header"></div>
 
-<main>
-    <table>
-        <thead>
-            <tr>
-                <th>Aluno</th>
-                <th>Curso</th>
-                <th>Semestre</th>
-                <th>Media</th>
-                <th>Situação</th>
-            </tr>
-        </thead>
-        <tbody id="tabelaAlunos">
+<main class="mainFlex">
+    <div class="tabela">
+        <button id="abrirModal">Cadastrar Aluno</button>
+            <div id="modal" class="modal">
+                <div class="modalContent">
+                    <h2>Novo Aluno</h2>
+                    <label for="nome">Nome do aluno:</label><br>
+                    <input type="text" id="nome" placeholder="Nome do aluno"><br>
+                    <label for="curso">Curso do aluno:</label><br>
+                    <input type="text" id="curso" placeholder="Curso do aluno">
+                    <input type="number" id="semestre" placeholder="3" min="1" max="12"><br>
+                    <label for="notas">Notas</label>
+                    <input type="number" id="nota1">
+                    <input type="number" id="nota2"><br>
+                    
+                    <button id="fecharModal">Cancelar</button>
+                    <button>Salvar</button>
+                    
+                </div>
 
-        </tbody>
-    </table>
+            </div>
+
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Aluno</th>
+                    <th>Curso</th>
+                    <th>Semestre</th>
+                    <th>Media</th>
+                    <th>Situação</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaAlunos">
+
+            </tbody>
+        </table>
+    </div>
 </main>
      
      <div id="footer"></div>

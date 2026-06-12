@@ -1,0 +1,58 @@
+.mainFlex {
+    display:flex
+}
+
+.tabela {
+    margin: 20px;
+    padding: 30px;
+    margin-left: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    max-width: fit-content;
+    table {
+        border-collapse: collapse;
+    }
+    th, td{
+    padding: 10px;
+}
+
+tr {
+    background-color: #091020;
+    color: #F8FAFC;
+}
+tbody tr {
+    background-color: #F8FAFC;
+    transition: all 0.3s ease;
+    color: #1E293B;   
+}
+
+tbody tr:hover {
+    transform: scale(1.01);
+    background-color: #68c8d9;
+
+}
+
+.modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.5);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.ativo {
+    display: flex;
+}
+
+.modalContent {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    min-width: 400px;
+}
+}
+
