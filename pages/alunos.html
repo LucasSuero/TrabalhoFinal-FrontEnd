@@ -15,18 +15,35 @@
         <button id="abrirModal">Cadastrar Aluno</button>
             <div id="modal" class="modal">
                 <div class="modalContent">
-                    <h2>Novo Aluno</h2>
-                    <label for="nome">Nome do aluno:</label><br>
-                    <input type="text" id="nome" placeholder="Nome do aluno"><br>
-                    <label for="curso">Curso do aluno:</label><br>
-                    <input type="text" id="curso" placeholder="Curso do aluno">
-                    <input type="number" id="semestre" placeholder="3" min="1" max="12"><br>
-                    <label for="notas">Notas</label>
-                    <input type="number" id="nota1">
-                    <input type="number" id="nota2"><br>
-                    
-                    <button id="fecharModal">Cancelar</button>
-                    <button>Salvar</button>
+                    <div class="tituloModal">
+                        <h2>Novo Aluno</h2>
+                    </div>
+                        <div>
+                            <label for="nome">Nome do aluno:</label><br>
+                            <input class="nome" type="text" id="nome" placeholder="Nome do aluno"><br>
+                        </div><br>
+                        <div>
+                            <label for="nacimento">Data de nascimento:</label><br>
+                            <input type="date">
+                        </div><br>
+                        <div class="flex">
+                            <div>
+                                <label for="curso">Curso do aluno:</label><br>
+                                <input class="curso" type="text" id="curso" placeholder="Curso do aluno">
+                            </div><br>
+                            <div>
+                                <label for="semestre">Semestre</label><br>
+                                <input class="semestre" type="number" id="semestre" placeholder="3" min="1" max="12"><br>
+                            </div>
+                        </div><br>
+                        <div>
+                            <label for="notas">Notas:</label><br>
+                                    <input class="notas" type="number" id="nota1">
+                                    <input class="notas" type="number" id="nota2"><br>
+                                        <button id="fecharModal">Cancelar</button>
+                                        <button>Salvar</button>
+                                
+                        </div>
                     
                 </div>
 
