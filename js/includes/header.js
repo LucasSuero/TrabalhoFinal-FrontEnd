@@ -1,3 +1,8 @@
+const estaEmPages = 
+window.location.pathname.includes("/pages/");
+
+const base = estaEmPages ? "../" : "./";
+
 document.getElementById("header").innerHTML = `
     <div class="topo">
         <h1>Portal Acadêmico</h1>
@@ -5,11 +10,11 @@ document.getElementById("header").innerHTML = `
     </div>
 
     <div class="selecao">
-        <a href="/index.html">Início</a>
-        <a href="/pages/alunos.html">Alunos</a>
-        <a href="/pages/notas.html">Notas</a>
-        <a href="/pages/relatorios.html">Relatórios</a>
-        <a href="/pages/sobre.html">Sobre</a>
+        <a href="${base}/index.html">Início</a>
+        <a href="${base}/pages/alunos.html">Alunos</a>
+        <a href="${base}/pages/notas.html">Notas</a>
+        <a href="${base}/pages/relatorios.html">Relatórios</a>
+        <a href="${base}/pages/sobre.html">Sobre</a>
     </div>
 `;
 console.log("Header Carregado!");

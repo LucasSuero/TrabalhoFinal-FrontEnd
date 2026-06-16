@@ -12,7 +12,7 @@
 
 <main class="mainFlex">
     <div class="tabela">
-        <button id="abrirModal">Cadastrar Aluno</button>
+        <button id="abrirModal" class="cadastrarAlunoBtn">Cadastrar Aluno</button>
             <div id="modal" class="modal">
                 <div class="modalContent">
                     <div class="tituloModal">
@@ -23,8 +23,8 @@
                             <input class="nome" type="text" id="nome" placeholder="Nome do aluno"><br>
                         </div><br>
                         <div>
-                            <label for="nacimento">Data de nascimento:</label><br>
-                            <input type="date">
+                            <label for="nascimento">Data de nascimento:</label><br>
+                            <input type="date" id="nascimento">
                         </div><br>
                         <div class="flex">
                             <div>
@@ -40,15 +40,11 @@
                             <label for="notas">Notas:</label><br>
                                     <input class="notas" type="number" id="nota1">
                                     <input class="notas" type="number" id="nota2"><br>
-                                        <button id="fecharModal">Cancelar</button>
-                                        <button>Salvar</button>
-                                
-                        </div>
-                    
+                                    <button class="cancelar" id="fecharModal">Cancelar</button>
+                                    <button class="salvar" id="salvarCadastro">Salvar</button>
+                        </div>                 
                 </div>
-
             </div>
-
     
         <table>
             <thead>
@@ -68,7 +64,7 @@
 </main>
      
      <div id="footer"></div>
-    <script src="../js/tabela.js"></script>
+    <script src="../js/aluno.js"></script>
     <script src="../js/includes/header.js"></script>
     <script src="../js/includes/footer.js"></script>
 </body>
