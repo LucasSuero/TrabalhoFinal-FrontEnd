@@ -147,7 +147,7 @@ input[type="date"] {
     border-radius: 10px;
     text-align: center;
     height: 25px;
-    width: 100px;
+    width: 120px;
 }
 
 .cadastrarAlunoBtn {
@@ -163,3 +163,11 @@ input[type="date"] {
     background-color: #68c8d9;
 }
 
+.BtnExcluir {
+    color: #F8FAFC;
+    background-color: red;
+    height: 30px;
+    width: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+}

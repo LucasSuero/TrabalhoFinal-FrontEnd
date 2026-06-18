@@ -1,3 +1,6 @@
+CompletarTabela()
+
+
 //Funcao responsavel por puxas as informações do Json
 async function carregarAlunos() {
 
@@ -18,9 +21,22 @@ async function carregarAlunos() {
     return alunos;
 }
 
+async function ExcluirAluno(event) {
+    const alunos = await carregarAlunos()
+    console.log(alunos);
+    const indice = Number(event.target.dataset.indice);    
+
+    if(confirm("Deseja realmente exclur este aluno?")) {
+        alunos.splice(indice, 1);
+        localStorage.setItem("alunos", JSON.stringify(alunos));
+        console.log(alunos);
+        CompletarTabela();
+    }
+}
+
 //Funcao resposavel por completar as informações do json para dentro da tabela
 async function CompletarTabela() {
-    const alunos = await carregarAlunos();
+    let alunos = await carregarAlunos();
     let tabela = document.getElementById("tabelaAlunos");
 
     tabela.innerHTML = "";
@@ -37,21 +53,33 @@ async function CompletarTabela() {
             situacao = "reprovado"
         }
 
+        let excluirBtn = document.createElement("button");
+        excluirBtn.innerText = "Excluir";
+        excluirBtn.classList.add("BtnExcluir");
+        excluirBtn.dataset.indice = i;
+        excluirBtn.addEventListener("click", (event) => {
+            ExcluirAluno(event);
+        })
+
         const valores = [
             alunos[i].nome,
             alunos[i].curso,
             alunos[i].semestre +' º Período',
             (alunos[i].nota1 + alunos[i].nota2)/2,
-            situacao
+            situacao,
         ];
 
-    for(let j = 0; j < valores.length; j++) {
-        let td = document.createElement("td");
-        td.innerText = valores[j];
-        tr.appendChild(td);
-    }
+        for(let j = 0; j < valores.length; j++) {
+            let td = document.createElement("td");
+            td.innerText = valores[j];
+            tr.appendChild(td);
+            }
 
-    tabela.appendChild(tr);
+        let td = document.createElement("td");
+        td.appendChild(excluirBtn);
+        tr.appendChild(td);
+
+        tabela.appendChild(tr);
     }
 }
 
@@ -76,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
    function cadastroAluno() {
 
     const novoAluno = {
+        id: Date.now(),
         nome: document.getElementById("nome").value,
         nascimento: document.getElementById("nascimento").value,
         curso: document.getElementById("curso").value,
