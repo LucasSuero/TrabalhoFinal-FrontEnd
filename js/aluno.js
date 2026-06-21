@@ -1,6 +1,14 @@
 CompletarTabela()
 
+// variavel que armazena o indice do aluno que está sendo editado 
+//Se for null, significa que não estamos editando nenhum aluno (modo cadastro)
 let indiceEdicao = null;
+
+let ordemNome = true;
+let ordemCurso = true;
+let ordemSemestre = true;
+let ordemMedia = true;
+let ordemSituacao = true;
 
 //Funcao responsavel por puxas as informações do Json
 async function carregarAlunos() {
@@ -170,3 +178,108 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+//ordenar a tabela por nome
+async function ordenarNome() {
+    let alunos = await carregarAlunos();
+    alunos.sort((a, b) => {
+        if (ordemNome) {
+            return a.nome.localeCompare(b.nome);
+        }
+
+        return b.nome.localeCompare(a.nome);
+    });
+
+    ordemNome = !ordemNome;
+    localStorage.setItem("alunos", JSON.stringify(alunos));
+    CompletarTabela();
+}
+//ordenar por curso
+async function ordenarCurso() {
+    let alunos = await carregarAlunos();
+    alunos.sort((a, b) => {
+        if (ordemCurso) {
+            return a.curso.localeCompare(b.curso);
+        }
+
+        return b.curso.localeCompare(a.curso);
+    });
+
+    ordemCurso = !ordemCurso;
+    localStorage.setItem("alunos", JSON.stringify(alunos));
+    CompletarTabela();
+}
+//ordenar por semestre
+async function ordenarSemestre() {
+    let alunos = await carregarAlunos();
+    alunos.sort((a, b) => {
+        if (ordemSemestre) {
+            return a.semestre - b.semestre;
+        }
+
+        return b.semestre - a.semestre;
+    });
+
+    ordemSemestre = !ordemSemestre;
+    localStorage.setItem("alunos", JSON.stringify(alunos));
+    CompletarTabela();
+}
+//ordenar por media
+async function ordenarMedia() {
+    let alunos = await carregarAlunos();
+    alunos.sort((a, b) => {
+        let mediaA = (a.nota1 + a.nota2) / 2;
+        let mediaB = (b.nota1 + b.nota2) / 2;
+        if (ordemMedia) {
+            return mediaA - mediaB;
+        }
+
+        return mediaB - mediaA;
+    });
+
+    ordemMedia = !ordemMedia;
+    localStorage.setItem("alunos", JSON.stringify(alunos));
+    CompletarTabela();
+}
+//ordenar por situacao
+async function ordenarSituacao() {
+    let alunos = await carregarAlunos();
+    alunos.sort((a, b) => {
+        let mediaA = (a.nota1 + a.nota2) / 2;
+        let mediaB = (b.nota1 + b.nota2) / 2;
+
+        let situacaoA =
+            mediaA > 7 ? "aprovado" :
+            mediaA > 6 ? "recuperação" :
+            "reprovado";
+
+        let situacaoB =
+            mediaB > 7 ? "aprovado" :
+            mediaB > 6 ? "recuperação" :
+            "reprovado";
+
+        if (ordemSituacao) {
+            return situacaoA.localeCompare(situacaoB);
+        }
+
+        return situacaoB.localeCompare(situacaoA);
+    });
+
+    ordemSituacao = !ordemSituacao;
+    localStorage.setItem("alunos", JSON.stringify(alunos));
+    CompletarTabela();
+}
+//quando clica nos botoes chama as funcoes acima
+    document.getElementById("ordNome")
+        .addEventListener("click", ordenarNome);
+
+    document.getElementById("ordCurso")
+        .addEventListener("click", ordenarCurso);
+
+    document.getElementById("ordSemestre")
+        .addEventListener("click", ordenarSemestre);
+
+    document.getElementById("ordMedia")
+        .addEventListener("click", ordenarMedia);
+
+    document.getElementById("ordSituacao")
+        .addEventListener("click", ordenarSituacao);
