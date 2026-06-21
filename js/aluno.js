@@ -72,9 +72,9 @@ async function CompletarTabela() {
         let tr = document.createElement("tr");
         let media = (alunos[i].nota1 + alunos[i].nota2)/2
         let situacao;
-        if (media > 7) {
+        if (media >= 6) {
             situacao = "aprovado";
-        }else if (media < 7 && 6 < media) {
+        }else if (media > 3) {
             situacao = "recuperação"
         } else {
             situacao = "reprovado"
@@ -107,8 +107,13 @@ async function CompletarTabela() {
         for(let j = 0; j < valores.length; j++) {
             let td = document.createElement("td");
             td.innerText = valores[j];
-            tr.appendChild(td);
+            if (j === 4) { 
+                if (situacao === "aprovado") td.classList.add("situacao-aprovado");
+                else if (situacao === "recuperação") td.classList.add("situacao-recuperacao");
+                else if (situacao === "reprovado") td.classList.add("situacao-reprovado");
             }
+            tr.appendChild(td);
+        }
 
         let td = document.createElement("td");
         td.appendChild(editarBtn);

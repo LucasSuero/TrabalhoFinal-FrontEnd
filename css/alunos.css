@@ -177,3 +177,18 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-left: auto;
     max-height: auto;
 }
+
+.situacao-aprovado {
+    color: #28a745 !important;
+    font-weight: bold;
+}
+
+.situacao-recuperacao {
+    color: #fd7e14 !important;
+    font-weight: bold;
+}
+
+.situacao-reprovado {
+    color: #dc3545 !important;
+    font-weight: bold;
+}

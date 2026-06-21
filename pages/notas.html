@@ -4,14 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Notas</title>
+    <link rel="stylesheet" href="../css/alunos.css"> 
+    <title>Notas dos Alunos</title>
 </head>
 <body>
      <div id="header"></div>
 
-        <main></main>
+<main class="mainFlex">
+    <div class="tabela">
+        <h2 style="margin-bottom: 20px;">Gerenciamento de Notas</h2>
 
+        <div id="modalNotas" class="modal">
+            <div class="modalContent">
+                <div class="tituloModal">
+                    <h2 id="nomeAlunoModal">Notas</h2>
+                </div>
+                <br>
+                <div>
+                    <label for="nota1">Nota 1:</label><br>
+                    <input class="notas" type="number" id="nota1" min="0" max="10" step="0.1">
+                </div><br>
+                <div>
+                    <label for="nota2">Nota 2:</label><br>
+                    <input class="notas" type="number" id="nota2" min="0" max="10" step="0.1"><br>
+                </div><br>
+                <div>
+                    <button class="cancelar" id="fecharModalNotas">Cancelar</button>
+                    <button class="salvar" id="salvarNotas">Salvar</button>
+                </div>                 
+            </div>
+        </div>
+    
+        <table>
+    <thead>
+        <tr>
+            <th id="ordNome">Aluno <span class="sort-icon">⇅</span></th>
+            <th id="ordCurso">Curso <span class="sort-icon">⇅</span></th>
+            <th id="ordSemestre">Semestre <span class="sort-icon">⇅</span></th>
+            <th>Nota 1</th> 
+            <th>Nota 2</th> 
+            <th id="ordMedia">Média <span class="sort-icon">⇅</span></th>
+            <th id="ordSituacao">Situação <span class="sort-icon">⇅</span></th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody id="tabelaNotas">
+    </tbody>
+</table>
+    </div>
+
+    <img src="/img/alunos.jpg" alt="" class="imgPrincipal">
+</main>
+     
      <div id="footer"></div>
+    <script src="../js/notas.js"></script>
     <script src="../js/includes/header.js"></script>
     <script src="../js/includes/footer.js"></script>
 </body>
