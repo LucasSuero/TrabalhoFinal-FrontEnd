@@ -1,5 +1,6 @@
 CompletarTabela()
 
+let indiceEdicao = null;
 
 //Funcao responsavel por puxas as informações do Json
 async function carregarAlunos() {
@@ -20,7 +21,7 @@ async function carregarAlunos() {
 
     return alunos;
 }
-
+//funcao do botao excluir
 async function ExcluirAluno(event) {
     const alunos = await carregarAlunos()
     console.log(alunos);
@@ -32,6 +33,24 @@ async function ExcluirAluno(event) {
         console.log(alunos);
         CompletarTabela();
     }
+}
+//funcao do botao de editar
+async function EditarAluno(event) {
+
+    const alunos = await carregarAlunos();
+
+    indiceEdicao = Number(event.target.dataset.indice);
+
+    const aluno = alunos[indiceEdicao];
+
+    document.getElementById("nome").value = aluno.nome;
+    document.getElementById("nascimento").value = aluno.nascimento;
+    document.getElementById("curso").value = aluno.curso;
+    document.getElementById("semestre").value = aluno.semestre;
+    document.getElementById("nota1").value = aluno.nota1;
+    document.getElementById("nota2").value = aluno.nota2;
+
+    modal.classList.add("ativo");
 }
 
 //Funcao resposavel por completar as informações do json para dentro da tabela
@@ -52,6 +71,14 @@ async function CompletarTabela() {
         } else {
             situacao = "reprovado"
         }
+
+        let editarBtn = document.createElement("button");
+        editarBtn.innerText = "Editar";
+        editarBtn.classList.add("BtnEditar");
+        editarBtn.dataset.indice = i;
+        editarBtn.addEventListener("click", (event) => {
+            EditarAluno(event);
+        })
 
         let excluirBtn = document.createElement("button");
         excluirBtn.innerText = "Excluir";
@@ -76,6 +103,7 @@ async function CompletarTabela() {
             }
 
         let td = document.createElement("td");
+        td.appendChild(editarBtn);
         td.appendChild(excluirBtn);
         tr.appendChild(td);
 
@@ -101,40 +129,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const salvarCadastro = document.getElementById("salvarCadastro");
 
-   function cadastroAluno() {
+    function cadastroAluno() {
 
-    const novoAluno = {
-        id: Date.now(),
-        nome: document.getElementById("nome").value,
-        nascimento: document.getElementById("nascimento").value,
-        curso: document.getElementById("curso").value,
-        semestre: document.getElementById("semestre").value,
-        nota1: Number(document.getElementById("nota1").value),
-        nota2: Number(document.getElementById("nota2").value),
-    };
+        const novoAluno = {
+            id: Date.now(),
+            nome: document.getElementById("nome").value,
+            nascimento: document.getElementById("nascimento").value,
+            curso: document.getElementById("curso").value,
+            semestre: document.getElementById("semestre").value,
+            nota1: Number(document.getElementById("nota1").value),
+            nota2: Number(document.getElementById("nota2").value),
+        };
 
-    let alunos = JSON.parse(localStorage.getItem("alunos")) || [];
+        let alunos = JSON.parse(localStorage.getItem("alunos")) || [];
 
-    alunos.push(novoAluno);
+        if (indiceEdicao !== null) {
+            alunos[indiceEdicao] = novoAluno;
+            indiceEdicao = null;
+        } else {
+            alunos.push(novoAluno);
+        }
 
-    localStorage.setItem("alunos", JSON.stringify(alunos));
+        localStorage.setItem("alunos", JSON.stringify(alunos));
 
-    CompletarTabela();
+        CompletarTabela();
 
-}
+        document.getElementById("nome").value = "";
+        document.getElementById("nascimento").value = "";
+        document.getElementById("curso").value = "";
+        document.getElementById("semestre").value = "";
+        document.getElementById("nota1").value = "";
+        document.getElementById("nota2").value = "";
+    }
+
     salvarCadastro.addEventListener("click", () => {
 
-        if (typeof CompletarTabela === "function") {
-            CompletarTabela();
-        }
+    cadastroAluno();
 
-        const modal = document.getElementById("modal");
-
-        if (modal) {
-            modal.classList.remove("ativo");
-        }
-
-        cadastroAluno();
+    modal.classList.remove("ativo");
     });
 
 });
