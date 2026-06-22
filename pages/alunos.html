@@ -13,6 +13,23 @@
 <main class="mainFlex">
     <div class="tabela">
         <button id="abrirModal" class="cadastrarAlunoBtn">Cadastrar Aluno</button>
+        <table>
+            <thead>
+                <tr><!-- <span class="sort-icon">&#8645;</span>  é a seta pra cima e pra baixo usado pra trocar a ordem dos elementos na tabela-->
+                    <th id="ordNome">Aluno  <span class="sort-icon">&#8645;</span></th>
+                    <th id="ordCurso">Curso  <span class="sort-icon">&#8645;</span></th>
+                    <th id="ordSemestre">Semestre  <span class="sort-icon">&#8645;</span></th>
+                    <th id="ordMedia">Media  <span class="sort-icon">&#8645;</span></th>
+                    <th id="ordSituacao">Situação  <span class="sort-icon">&#8645;</span></th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaAlunos">
+
+            </tbody>
+        </table>
+
+                
             <div id="modal" class="modal">
                 <div class="modalContent">
                     <div class="tituloModal">
@@ -46,21 +63,6 @@
                 </div>
             </div>
     
-        <table>
-            <thead>
-                <tr><!-- <span class="sort-icon">&#8645;</span>  é a seta pra cima e pra baixo usado pra trocar a ordem dos elementos na tabela-->
-                    <th id="ordNome">Aluno  <span class="sort-icon">&#8645;</span></th>
-                    <th id="ordCurso">Curso  <span class="sort-icon">&#8645;</span></th>
-                    <th id="ordSemestre">Semestre  <span class="sort-icon">&#8645;</span></th>
-                    <th id="ordMedia">Media  <span class="sort-icon">&#8645;</span></th>
-                    <th id="ordSituacao">Situação  <span class="sort-icon">&#8645;</span></th>
-                    <th>Ação</th>
-                </tr>
-            </thead>
-            <tbody id="tabelaAlunos">
-
-            </tbody>
-        </table>
     </div>
 
     <img src="/img/alunos.jpg" alt="" class="imgPrincipal">

@@ -150,8 +150,8 @@ document.addEventListener("DOMContentLoaded", () => {
             nascimento: document.getElementById("nascimento").value,
             curso: document.getElementById("curso").value,
             semestre: document.getElementById("semestre").value,
-            nota1: Number(document.getElementById("nota1").value),
-            nota2: Number(document.getElementById("nota2").value),
+            nota1: null,
+            nota2: null,
         };
 
         let alunos = JSON.parse(localStorage.getItem("alunos")) || [];
