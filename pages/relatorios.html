@@ -7,14 +7,45 @@
     <title>Relatorios</title>
 </head>
 <body>
-     <div id="header"></div>
+    <div id="header"></div>
 
-     <main>
-        
-     </main>
+    <main>
+        <h1>Estatísticas do Sistema</h1>
 
-     <div id="footer"></div>
+    <div class="card-relatorio">
+        <h3>Estatística Geral</h3>
+        <p>Total de Alunos: <span id="totAlunos">0</span></p>
+        <p>Aprovados: <span id="totAprovados">0</span></p>
+        <p>Recuperação: <span id="totRecuperacao">0</span></p>
+        <p>Reprovados: <span id="totReprovados">0</span></p>
+    </div>
+
+    <div class="card-relatorio">
+        <h3>Relatório de Curso</h3>
+        <ul id="listaCursos">
+            </ul>
+    </div>
+
+    <div class="card-relatorio">
+        <h3>Desempenho Acadêmico</h3>
+        <p>Maior Média: <span id="maiorMedia">0</span></p>
+        <p>Menor Média: <span id="menorMedia">0</span></p>
+        <p>Média Geral da Instituição: <span id="mediaGeral">0</span></p>
+        <p>Alunos com a Maior Média: <span id="qtdMaiorMedia">0</span></p>
+        <p>Alunos Acima da Média Geral: <span id="qtdAcimaMedia">0</span></p>
+        <p>Alunos Abaixo da Média Geral: <span id="qtdAbaixoMedia">0</span></p>
+    </div>
+
+    <div class="card-relatorio">
+        <h3>Top 5 - Maiores Médias</h3>
+        <ol id="listaTop5">
+            </ol>
+    </div>
+    </main>
+
+    <div id="footer"></div>
     <script src="../js/includes/header.js"></script>
     <script src="../js/includes/footer.js"></script>
+    <script src="../js/relatorios.js"></script>
 </body>
 </html>
