@@ -2,20 +2,20 @@
 const alunosJSON = [
     {
         "nome": "Leonardo Kenji",
-        "papel": "Desenvolvedor Front-End",
-        "descricao": "Estudante de Análise e Desenvolvimento de Sistemas. Possui interesse em desenvolvimento web, design de interfaces e experiência do usuário.",
+        "papel": "Aluno Engenharia de Software",
+        "descricao": "Estudante de Engenharia de Software da.",
         "foto": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" // Imagem de placeholder
     },
     {
         "nome": "Lucas Suero",
-        "papel": "Desenvolvedora Full Stack",
-        "descricao": "Estudante de Engenharia de Software com interesse em desenvolvimento de aplicações web, banco de dados e integração entre front-end e back-end.",
+        "papel": "Aluno Engenharia de Software",
+        "descricao": "Estudante de Engenharia de Software da Unicesumar.",
         "foto": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
     },
     {
         "nome": "Tiago Joslin",
-        "papel": "Analista de Sistemas",
-        "descricao": "Estudante de Sistemas de Informação com foco em análise de requisitos, modelagem de sistemas e gerenciamento de projetos de software.",
+        "papel": "Aluno Engenharia de Software",
+        "descricao": "Estudante de Engenharia de Software da Unicesumar.",
         "foto": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
     }
 ];
