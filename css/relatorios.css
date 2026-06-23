@@ -1,0 +1,97 @@
+/* Configuração do Container Principal (Dashboard) */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    /* Cria colunas responsivas que se adaptam ao tamanho da tela */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    font-family: Arial, sans-serif;
+}
+
+/* Título da Página */
+main h1 {
+    grid-column: 1 / -1; /* Faz o título esticar por todas as colunas da grade */
+    text-align: center;
+    font-size: 2.2rem;
+    color: #0f1522; /* Azul bem escuro */
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Design dos Cartões de Relatório */
+.card-relatorio {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    border-top: 5px solid #2b6cb0; /* Linha de destaque no topo (Azul) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito flutuante ao passar o mouse sobre o cartão */
+.card-relatorio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Título dentro dos Cartões */
+.card-relatorio h3 {
+    font-size: 1.3rem;
+    color: #1a202c;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Linhas de Informação (Parágrafos) */
+.card-relatorio p {
+    font-size: 1.05rem;
+    color: #4a5568;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #e2e8f0; /* Linha pontilhada separando os itens */
+    
+    /* Alinha o texto na esquerda e o número na direita */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Remove a linha pontilhada do último parágrafo de cada card */
+.card-relatorio p:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Destaque para os Números */
+.card-relatorio span {
+    font-weight: bold;
+    color: #2b6cb0; /* Azul vibrante para os dados */
+    font-size: 1.15rem;
+    background-color: #ebf8ff;
+    padding: 2px 10px;
+    border-radius: 20px;
+}
+
+/* Estilização das Listas */
+.card-relatorio ul, .card-relatorio ol {
+    margin-left: 20px;
+    color: #4a5568;
+    line-height: 1.8;
+}
+
+.card-relatorio li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #f0f4f8;
+}
+
+/* Destaque sutil ao passar o mouse nas listas */
+.card-relatorio li:hover {
+    color: #2b6cb0;
+    font-weight: bold;
+}
