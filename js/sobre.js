@@ -3,20 +3,20 @@ const alunosJSON = [
     {
         "nome": "Leonardo Kenji",
         "papel": "Aluno Engenharia de Software",
-        "descricao": "Estudante de Engenharia de Software da Unicesumar.",
-        "foto": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" // Imagem de placeholder
+        "descricao": "Estudante de Engenharia de Software da.",
+        "foto": "../img/Foto Leonardo.jpeg" // Imagem de placeholder
     },
     {
         "nome": "Lucas Suero",
         "papel": "Aluno Engenharia de Software",
         "descricao": "Estudante de Engenharia de Software da Unicesumar.",
-        "foto": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+        "foto": "../img/Foto Lucas.jpeg"
     },
     {
         "nome": "Tiago Joslin",
         "papel": "Aluno Engenharia de Software",
-        "descricao": "Estudante de Engenharia de Software da Unicesumar.",
-        "foto": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+        "descricao": "Estudante de Engenharia de Software da Unicesumar",
+        "foto": "../img/Foto Tiago.jpeg"
     }
 ];
 
