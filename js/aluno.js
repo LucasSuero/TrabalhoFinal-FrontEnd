@@ -55,8 +55,8 @@ async function EditarAluno(event) {
     document.getElementById("nascimento").value = aluno.nascimento;
     document.getElementById("curso").value = aluno.curso;
     document.getElementById("semestre").value = aluno.semestre;
-    document.getElementById("nota1").value = aluno.nota1;
-    document.getElementById("nota2").value = aluno.nota2;
+    /* document.getElementById("nota1").value = aluno.nota1;
+    document.getElementById("nota2").value = aluno.nota2; */
 
     modal.classList.add("ativo");
 }
@@ -171,8 +171,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("nascimento").value = "";
         document.getElementById("curso").value = "";
         document.getElementById("semestre").value = "";
-        document.getElementById("nota1").value = "";
-        document.getElementById("nota2").value = "";
+        /* document.getElementById("nota1").value = "";
+        document.getElementById("nota2").value = ""; */
     }
 
     salvarCadastro.addEventListener("click", () => {
